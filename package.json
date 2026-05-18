@@ -1,0 +1,9 @@
+{
+  "name": "chess-tournament-system",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Samodzielny system turniejowy szachowy w stylu ChessArbiter.",
+  "scripts": {
+    "start": "python -m http.server 4173"
+  }
+}
