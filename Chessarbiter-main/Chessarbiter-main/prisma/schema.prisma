@@ -1,0 +1,222 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum UserRole {
+  ADMIN
+  ARBITER
+  PLAYER
+}
+
+enum TournamentType {
+  SWISS
+  ROUND_ROBIN
+}
+
+enum TimeControlType {
+  CLASSICAL
+  RAPID
+  BLITZ
+}
+
+enum TournamentStatus {
+  DRAFT
+  PUBLISHED
+  REGISTRATION_CLOSED
+  IN_PROGRESS
+  FINISHED
+  CANCELLED
+}
+
+enum RegistrationStatus {
+  REGISTERED
+  CANCELLED
+  WAITLIST
+}
+
+enum RoundStatus {
+  NOT_STARTED
+  PAIRINGS_PUBLISHED
+  IN_PROGRESS
+  COMPLETED
+}
+
+enum GameResult {
+  NOT_PLAYED
+  WHITE_WIN
+  BLACK_WIN
+  DRAW
+  WHITE_FORFEIT
+  BLACK_FORFEIT
+  DOUBLE_FORFEIT
+  BYE
+}
+
+model User {
+  id            String         @id @default(cuid())
+  email         String         @unique
+  passwordHash  String
+  name          String?
+  role          UserRole       @default(PLAYER)
+  playerProfile PlayerProfile?
+  tournaments   Tournament[]   @relation("TournamentCreator")
+  registrations TournamentRegistration[]
+  enteredResults Game[] @relation("ResultEnteredBy")
+  deletedAt     DateTime?
+  createdAt     DateTime       @default(now())
+  updatedAt     DateTime       @updatedAt
+}
+
+model PlayerProfile {
+  id              String        @id @default(cuid())
+  userId          String        @unique
+  user            User          @relation(fields: [userId], references: [id], onDelete: Cascade)
+  firstName       String
+  lastName        String
+  email           String
+  clubOrCity      String
+  federation      String?
+  licenseNumber   String?
+  classicalRating Int?
+  rapidRating     Int?
+  blitzRating     Int?
+  chessCategory   String        @default("NONE")
+  phoneNumber     String?
+  birthYear       Int?
+  createdAt       DateTime      @default(now())
+  updatedAt       DateTime      @updatedAt
+}
+
+model Tournament {
+  id                       String                   @id @default(cuid())
+  title                    String
+  slug                     String                   @unique
+  description              String
+  location                 String
+  city                     String
+  startDate                DateTime
+  endDate                  DateTime?
+  registrationDeadline     DateTime?
+  organizer                String
+  contactEmail             String
+  contactPhone             String?
+  tournamentType           TournamentType
+  timeControlType          TimeControlType
+  timeControlDescription   String
+  rounds                   Int
+  maxPlayers               Int?
+  entryFee                 String?
+  regulationsUrl           String?
+  status                   TournamentStatus         @default(DRAFT)
+  registrationOpen         Boolean                  @default(false)
+  allowPlayerCancellation  Boolean                  @default(true)
+  showRegisteredPlayers    Boolean                  @default(true)
+  createdById              String
+  createdBy                User                     @relation("TournamentCreator", fields: [createdById], references: [id], onDelete: Restrict)
+  registrations            TournamentRegistration[]
+  tournamentRounds         Round[]
+  games                    Game[]
+  standings                TournamentStanding[]
+  createdAt                DateTime                 @default(now())
+  updatedAt                DateTime                 @updatedAt
+  deletedAt                DateTime?
+}
+
+model TournamentRegistration {
+  id              String             @id @default(cuid())
+  tournamentId    String
+  tournament      Tournament         @relation(fields: [tournamentId], references: [id], onDelete: Cascade)
+  userId          String?
+  user            User?              @relation(fields: [userId], references: [id], onDelete: SetNull)
+  whiteGames      Game[]             @relation("WhiteRegistration")
+  blackGames      Game[]             @relation("BlackRegistration")
+  standing        TournamentStanding?
+  firstName       String
+  lastName        String
+  email           String
+  clubOrCity      String
+  federation      String?
+  licenseNumber   String?
+  rating          Int
+  chessCategory   String
+  phoneNumber     String?
+  birthYear       Int?
+  notes           String?
+  status          RegistrationStatus @default(REGISTERED)
+  seedNumber      Int?
+  startNumber     Int?
+  finalRank       Int?
+  createdAt       DateTime           @default(now())
+  updatedAt       DateTime           @updatedAt
+
+  @@unique([tournamentId, userId])
+  @@unique([tournamentId, email])
+  @@index([tournamentId, status])
+}
+
+model Round {
+  id           String           @id @default(cuid())
+  tournamentId String
+  tournament   Tournament       @relation(fields: [tournamentId], references: [id], onDelete: Cascade)
+  roundNumber  Int
+  status       RoundStatus      @default(NOT_STARTED)
+  games        Game[]
+  createdAt    DateTime         @default(now())
+  updatedAt    DateTime         @updatedAt
+
+  @@unique([tournamentId, roundNumber])
+  @@index([tournamentId, status])
+}
+
+model Game {
+  id                  String                  @id @default(cuid())
+  tournamentId        String
+  tournament          Tournament              @relation(fields: [tournamentId], references: [id], onDelete: Cascade)
+  roundId             String
+  round               Round                   @relation(fields: [roundId], references: [id], onDelete: Cascade)
+  boardNumber         Int
+  whiteRegistrationId String?
+  whiteRegistration   TournamentRegistration? @relation("WhiteRegistration", fields: [whiteRegistrationId], references: [id], onDelete: SetNull)
+  blackRegistrationId String?
+  blackRegistration   TournamentRegistration? @relation("BlackRegistration", fields: [blackRegistrationId], references: [id], onDelete: SetNull)
+  result              GameResult              @default(NOT_PLAYED)
+  whitePoints         Float                   @default(0)
+  blackPoints         Float                   @default(0)
+  resultEnteredById   String?
+  resultEnteredBy     User?                   @relation("ResultEnteredBy", fields: [resultEnteredById], references: [id], onDelete: SetNull)
+  resultEnteredAt     DateTime?
+  createdAt           DateTime                @default(now())
+  updatedAt           DateTime                @updatedAt
+
+  @@unique([roundId, boardNumber])
+  @@index([tournamentId, roundId])
+}
+
+model TournamentStanding {
+  id                String                 @id @default(cuid())
+  tournamentId      String
+  tournament        Tournament             @relation(fields: [tournamentId], references: [id], onDelete: Cascade)
+  registrationId    String                 @unique
+  registration      TournamentRegistration @relation(fields: [registrationId], references: [id], onDelete: Cascade)
+  points            Float                  @default(0)
+  gamesPlayed       Int                    @default(0)
+  wins              Int                    @default(0)
+  draws             Int                    @default(0)
+  losses            Int                    @default(0)
+  forfeits          Int                    @default(0)
+  buchholz          Float?
+  medianBuchholz    Float?
+  sonnebornBerger   Float?
+  progressiveScore  Float?
+  directEncounter   Float?
+  rank              Int
+  updatedAt         DateTime               @updatedAt
+
+  @@unique([tournamentId, registrationId])
+  @@index([tournamentId, rank])
+}

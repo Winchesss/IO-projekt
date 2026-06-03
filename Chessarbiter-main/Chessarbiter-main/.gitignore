@@ -1,0 +1,13 @@
+node_modules
+.next
+.env
+.env.local
+dist
+coverage
+*.tsbuildinfo
+
+.next-dev.err.log
+.next-dev.out.log
+
+.next-dev.err.log
+.next-dev.out.log
