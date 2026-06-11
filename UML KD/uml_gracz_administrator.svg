@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1448" height="1086" viewBox="0 0 1448 1086" version="1.1">
+
+<defs>
+  <pattern id="smallGrid" width="12" height="12" patternUnits="userSpaceOnUse">
+    <path d="M 12 0 L 0 0 0 12" fill="none" stroke="#eeeeee" stroke-width="1"/>
+  </pattern>
+  <pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse">
+    <rect width="60" height="60" fill="url(#smallGrid)"/>
+    <path d="M 60 0 L 0 0 0 60" fill="none" stroke="#dddddd" stroke-width="1"/>
+  </pattern>
+  <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+    <path d="M0,0 L0,6 L9,3 z" fill="#000"/>
+  </marker>
+</defs>
+<rect x="0" y="0" width="100%" height="100%" fill="#fff"/>
+<rect x="0" y="0" width="100%" height="100%" fill="url(#grid)" opacity="0.9"/>
+<rect x="220" y="16" width="1178" height="1054" fill="none" stroke="#000" stroke-width="2"/>
+
+
+<circle cx="105" cy="190" r="16" fill="#fff" stroke="#000" stroke-width="2"/>
+<line x1="105" y1="206" x2="105" y2="268" stroke="#000" stroke-width="2"/>
+<line x1="67" y1="233" x2="143" y2="233" stroke="#000" stroke-width="2"/>
+<line x1="105" y1="268" x2="71" y2="315" stroke="#000" stroke-width="2"/>
+<line x1="105" y1="268" x2="139" y2="315" stroke="#000" stroke-width="2"/>
+<text x="105" y="340.0" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="normal" text-anchor="middle" dominant-baseline="middle" fill="#000">Administrator</text>
+
+
+<circle cx="105" cy="640" r="16" fill="#fff" stroke="#000" stroke-width="2"/>
+<line x1="105" y1="656" x2="105" y2="718" stroke="#000" stroke-width="2"/>
+<line x1="67" y1="683" x2="143" y2="683" stroke="#000" stroke-width="2"/>
+<line x1="105" y1="718" x2="71" y2="765" stroke="#000" stroke-width="2"/>
+<line x1="105" y1="718" x2="139" y2="765" stroke="#000" stroke-width="2"/>
+<text x="105" y="790.0" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="normal" text-anchor="middle" dominant-baseline="middle" fill="#000">Gracz</text>
+
+<ellipse cx="540" cy="70" rx="90" ry="38" fill="#fff" stroke="#000" stroke-width="2"/>
+<text x="540" y="59.4" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="normal" text-anchor="middle" dominant-baseline="middle" fill="#000">Zarządzanie</text>
+<text x="540" y="80.6" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="normal" text-anchor="middle" dominant-baseline="middle" fill="#000">użytkownikami</text>
+<ellipse cx="540" cy="150" rx="90" ry="38" fill="#fff" stroke="#000" stroke-width="2"/>
+<text x="540" y="139.4" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="normal" text-anchor="middle" dominant-baseline="middle" fill="#000">Przegląd</text>
+<text x="540" y="160.6" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="normal" text-anchor="middle" dominant-baseline="middle" fill="#000">użytkowników</text>
+<ellipse cx="540" cy="235" rx="90" ry="38" fill="#fff" stroke="#000" stroke-width="2"/>
+<text x="540" y="224.4" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="normal" text-anchor="middle" dominant-baseline="middle" fill="#000">Nadawanie roli</text>
+<text x="540" y="245.6" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="normal" text-anchor="middle" dominant-baseline="middle" fill="#000">sędziego</text>
+<ellipse cx="540" cy="320" rx="90" ry="38" fill="#fff" stroke="#000" stroke-width="2"/>
+<text x="540" y="309.4" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="normal" text-anchor="middle" dominant-baseline="middle" fill="#000">Usuwanie roli</text>
+<text x="540" y="330.6" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="normal" text-anchor="middle" dominant-baseline="middle" fill="#000">sędziego</text>
+<ellipse cx="540" cy="405" rx="90" ry="38" fill="#fff" stroke="#000" stroke-width="2"/>
+<text x="540" y="394.4" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="normal" text-anchor="middle" dominant-baseline="middle" fill="#000">Usuwanie</text>
+<text x="540" y="415.6" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="normal" text-anchor="middle" dominant-baseline="middle" fill="#000">użytkownika</text>
+<line x1="170" y1="240" x2="450" y2="70" stroke="#000" stroke-width="2" fill="none"/>
+<line x1="170" y1="240" x2="450" y2="150" stroke="#000" stroke-width="2" fill="none"/>
+<line x1="170" y1="240" x2="450" y2="235" stroke="#000" stroke-width="2" fill="none"/>
+<line x1="170" y1="240" x2="450" y2="320" stroke="#000" stroke-width="2" fill="none"/>
+<line x1="170" y1="240" x2="450" y2="405" stroke="#000" stroke-width="2" fill="none"/>
+<ellipse cx="550" cy="500" rx="105" ry="42" fill="#fff" stroke="#000" stroke-width="2"/>
+<text x="550" y="489.4" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="normal" text-anchor="middle" dominant-baseline="middle" fill="#000">Przegląd dostępnych</text>
+<text x="550" y="510.6" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="normal" text-anchor="middle" dominant-baseline="middle" fill="#000">turniejów</text>
+<ellipse cx="550" cy="585" rx="100" ry="38" fill="#fff" stroke="#000" stroke-width="2"/>
+<text x="550" y="585.0" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="normal" text-anchor="middle" dominant-baseline="middle" fill="#000">Zapis na turniej</text>
+<ellipse cx="550" cy="660" rx="95" ry="38" fill="#fff" stroke="#000" stroke-width="2"/>
+<text x="550" y="660.0" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="normal" text-anchor="middle" dominant-baseline="middle" fill="#000">Edycja profilu</text>
+<ellipse cx="550" cy="735" rx="105" ry="40" fill="#fff" stroke="#000" stroke-width="2"/>
+<text x="550" y="724.4" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="normal" text-anchor="middle" dominant-baseline="middle" fill="#000">Przegląd własnych</text>
+<text x="550" y="745.6" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="normal" text-anchor="middle" dominant-baseline="middle" fill="#000">zgłoszeń</text>
+<ellipse cx="550" cy="815" rx="115" ry="38" fill="#fff" stroke="#000" stroke-width="2"/>
+<text x="550" y="815.0" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="normal" text-anchor="middle" dominant-baseline="middle" fill="#000">Rezygnacja z turnieju</text>
+<ellipse cx="550" cy="900" rx="100" ry="38" fill="#fff" stroke="#000" stroke-width="2"/>
+<text x="550" y="900.0" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="normal" text-anchor="middle" dominant-baseline="middle" fill="#000">Wylogowanie</text>
+<ellipse cx="550" cy="985" rx="120" ry="42" fill="#fff" stroke="#000" stroke-width="2"/>
+<text x="550" y="974.4" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="normal" text-anchor="middle" dominant-baseline="middle" fill="#000">Wyświetlanie</text>
+<text x="550" y="995.6" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="normal" text-anchor="middle" dominant-baseline="middle" fill="#000">szczegółów turnieju</text>
+<line x1="170" y1="685" x2="445" y2="500" stroke="#000" stroke-width="2" fill="none"/>
+<line x1="170" y1="685" x2="450" y2="585" stroke="#000" stroke-width="2" fill="none"/>
+<line x1="170" y1="685" x2="455" y2="660" stroke="#000" stroke-width="2" fill="none"/>
+<line x1="170" y1="685" x2="445" y2="735" stroke="#000" stroke-width="2" fill="none"/>
+<line x1="170" y1="685" x2="435" y2="815" stroke="#000" stroke-width="2" fill="none"/>
+<line x1="170" y1="685" x2="450" y2="900" stroke="#000" stroke-width="2" fill="none"/>
+<line x1="170" y1="685" x2="430" y2="985" stroke="#000" stroke-width="2" fill="none"/>
+<ellipse cx="1100" cy="585" rx="125" ry="42" fill="#fff" stroke="#000" stroke-width="2"/>
+<text x="1100" y="574.4" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="normal" text-anchor="middle" dominant-baseline="middle" fill="#000">Wprowadzenie</text>
+<text x="1100" y="595.6" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="normal" text-anchor="middle" dominant-baseline="middle" fill="#000">danych zawodnika</text>
+<line x1="650" y1="585" x2="975" y2="585" stroke="#000" stroke-width="2" fill="none" stroke-dasharray="8 8" marker-end="url(#arrow)"/>
+<text x="825" y="562.0" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="normal" text-anchor="middle" dominant-baseline="middle" fill="#000">&lt;&lt;include&gt;&gt;</text>
+<ellipse cx="1110" cy="820" rx="105" ry="42" fill="#fff" stroke="#000" stroke-width="2"/>
+<text x="1110" y="809.4" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="normal" text-anchor="middle" dominant-baseline="middle" fill="#000">Przegląd listy</text>
+<text x="1110" y="830.6" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="normal" text-anchor="middle" dominant-baseline="middle" fill="#000">startowej</text>
+<ellipse cx="1110" cy="900" rx="105" ry="42" fill="#fff" stroke="#000" stroke-width="2"/>
+<text x="1110" y="889.4" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="normal" text-anchor="middle" dominant-baseline="middle" fill="#000">Przegląd</text>
+<text x="1110" y="910.6" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="normal" text-anchor="middle" dominant-baseline="middle" fill="#000">wyników</text>
+<ellipse cx="1110" cy="980" rx="105" ry="42" fill="#fff" stroke="#000" stroke-width="2"/>
+<text x="1110" y="969.4" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="normal" text-anchor="middle" dominant-baseline="middle" fill="#000">Przegląd</text>
+<text x="1110" y="990.6" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="normal" text-anchor="middle" dominant-baseline="middle" fill="#000">parowań</text>
+<line x1="670" y1="985" x2="1005" y2="820" stroke="#000" stroke-width="2" fill="none" stroke-dasharray="8 8" marker-end="url(#arrow)"/>
+<text x="825" y="862.0" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="normal" text-anchor="middle" dominant-baseline="middle" fill="#000">&lt;&lt;include&gt;&gt;</text>
+<line x1="670" y1="985" x2="1005" y2="900" stroke="#000" stroke-width="2" fill="none" stroke-dasharray="8 8" marker-end="url(#arrow)"/>
+<text x="845" y="922.0" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="normal" text-anchor="middle" dominant-baseline="middle" fill="#000">&lt;&lt;include&gt;&gt;</text>
+<line x1="670" y1="985" x2="1005" y2="980" stroke="#000" stroke-width="2" fill="none" stroke-dasharray="8 8" marker-end="url(#arrow)"/>
+<text x="850" y="1008.0" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="normal" text-anchor="middle" dominant-baseline="middle" fill="#000">&lt;&lt;include&gt;&gt;</text>
+</svg>

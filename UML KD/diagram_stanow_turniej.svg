@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="720" viewBox="0 0 900 720" style="background-color:#ffffff;" content="&lt;mxfile host=&quot;app.diagrams.net&quot; modified=&quot;2026-06-11T00:00:00.000Z&quot; agent=&quot;ChatGPT&quot; version=&quot;24.7.17&quot; type=&quot;device&quot;&gt;&lt;diagram name=&quot;Page-1&quot;&gt;UML state machine diagram - Turniej Szachowy&lt;/diagram&gt;&lt;/mxfile&gt;">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#000000"/>
+    </marker>
+    <style>
+      .state { fill:#ffffff; stroke:#000000; stroke-width:1; }
+      .sep { stroke:#000000; stroke-width:1; }
+      .txt { font-family:Arial, Helvetica, sans-serif; font-size:12px; fill:#000000; }
+      .small { font-family:Arial, Helvetica, sans-serif; font-size:11px; fill:#000000; }
+      .edge { fill:none; stroke:#000000; stroke-width:1; marker-end:url(#arrow); }
+    </style>
+  </defs>
+
+  <!-- page border, similar to diagrams.net export -->
+  <rect x="4" y="4" width="892" height="712" fill="none" stroke="#000000" stroke-width="1"/>
+
+  <!-- title box -->
+  <rect x="28" y="16" width="126" height="50" fill="#ffffff" stroke="#000000" stroke-width="1"/>
+  <text class="txt" x="91" y="38" text-anchor="middle">Turniej</text>
+  <text class="txt" x="91" y="53" text-anchor="middle">Szachowy</text>
+
+  <!-- initial state -->
+  <circle cx="455" cy="32" r="12" fill="#000000" stroke="#ff0000" stroke-width="2"/>
+
+  <!-- states -->
+  <g id="state-szkic">
+    <rect class="state" x="387" y="116" width="136" height="68" rx="10" ry="10"/>
+    <line class="sep" x1="387" y1="138" x2="523" y2="138"/>
+    <text class="txt" x="455" y="131" text-anchor="middle">Utworzony/szkic</text>
+  </g>
+
+  <g id="state-opublikowany">
+    <rect class="state" x="354" y="224" width="202" height="78" rx="10" ry="10"/>
+    <line class="sep" x1="354" y1="249" x2="556" y2="249"/>
+    <text class="small" x="455" y="242" text-anchor="middle" font-weight="bold">Opublikowany / zapisy otwarte</text>
+  </g>
+
+  <g id="state-zapisy-zamkniete">
+    <rect class="state" x="205" y="332" width="136" height="62" rx="8" ry="8"/>
+    <line class="sep" x1="205" y1="356" x2="341" y2="356"/>
+    <text class="txt" x="273" y="349" text-anchor="middle">Zapisy zamknięte</text>
+  </g>
+
+  <g id="state-w-trakcie">
+    <rect class="state" x="36" y="526" width="136" height="68" rx="9" ry="9"/>
+    <line class="sep" x1="36" y1="550" x2="172" y2="550"/>
+    <text class="txt" x="104" y="543" text-anchor="middle">W trakcie</text>
+  </g>
+
+  <g id="state-zakonczony">
+    <rect class="state" x="402" y="638" width="136" height="52" rx="10" ry="10"/>
+    <line class="sep" x1="402" y1="663" x2="538" y2="663"/>
+    <text class="txt" x="470" y="656" text-anchor="middle">Zakończony</text>
+  </g>
+
+  <g id="state-anulowany">
+    <rect class="state" x="683" y="322" width="136" height="68" rx="8" ry="8"/>
+    <line class="sep" x1="683" y1="346" x2="819" y2="346"/>
+    <text class="txt" x="751" y="339" text-anchor="middle">Anulowany</text>
+  </g>
+
+  <!-- final state -->
+  <circle cx="751" cy="625" r="15" fill="#ffffff" stroke="#ff0000" stroke-width="2"/>
+  <circle cx="751" cy="625" r="10" fill="#000000" stroke="#000000" stroke-width="1"/>
+
+  <!-- transitions -->
+  <path class="edge" d="M455 44 L455 108"/>
+
+  <path class="edge" d="M455 184 L455 216"/>
+  <text class="small" x="466" y="210">Opublikowanie turnieju</text>
+
+  <path class="edge" d="M354 263 L273 263 L273 324"/>
+  <text class="small" x="251" y="258">Zamknięcie zapisów</text>
+
+  <path class="edge" d="M205 363 L104 363 L104 518"/>
+  <text class="small" x="48" y="350">Generowanie parowań</text>
+
+  <path class="edge" d="M172 560 L250 560 L250 674 L394 674"/>
+  <text class="small" x="258" y="581">Zakończenie wszystkich rund</text>
+
+  <path class="edge" d="M556 263 L751 263 L751 314"/>
+  <text class="small" x="632" y="257">Anulowanie turnieju</text>
+
+  <path class="edge" d="M341 363 L675 363"/>
+  <text class="small" x="470" y="379">Anulowanie turnieju</text>
+
+  <path class="edge" d="M104 526 L104 432 L751 432 L751 398"/>
+  <text class="small" x="515" y="448">Anulowanie turnieju</text>
+
+  <path class="edge" d="M538 664 L650 664 L650 625 L728 625"/>
+
+  <path class="edge" d="M751 390 L751 488 L746 488 L746 604"/>
+</svg>
