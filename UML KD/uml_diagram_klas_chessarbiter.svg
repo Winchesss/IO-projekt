@@ -1,0 +1,164 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1050" viewBox="0 0 1800 1050">
+  <defs>
+    <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#eeeeee" stroke-width="1"/>
+    </pattern>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#111" />
+    </marker>
+    <style><![CDATA[
+      .bg { fill: #fff; }
+      .grid { fill: url(#grid); }
+      .box { fill: #fff; stroke: #111; stroke-width: 1.4; }
+      .header { fill: #fff; stroke: #111; stroke-width: 1.4; }
+      .title { font: 700 18px Arial, Helvetica, sans-serif; fill: #000; }
+      .enumTitle { font: 700 16px Arial, Helvetica, sans-serif; fill: #000; }
+      .stereo { font: 14px Arial, Helvetica, sans-serif; fill: #000; }
+      .attr { font: 15px Arial, Helvetica, sans-serif; fill: #000; }
+      .line { fill: none; stroke: #111; stroke-width: 1.4; }
+      .dash { fill: none; stroke: #111; stroke-width: 1.4; stroke-dasharray: 6 5; marker-end: url(#arrow); }
+      .label { font: 14px Arial, Helvetica, sans-serif; fill: #000; }
+      .mult { font: 15px Arial, Helvetica, sans-serif; fill: #000; }
+    ]]></style>
+  </defs>
+  <rect class="bg" width="1800" height="1050"/>
+  <rect class="grid" width="1800" height="1050"/>
+
+  <!-- Helper: class boxes -->
+  <g id="ProfilZawodnika" transform="translate(25,25)">
+    <rect class="box" width="230" height="310"/>
+    <rect class="header" width="230" height="40"/>
+    <text class="title" x="115" y="26" text-anchor="middle">ProfilZawodnika</text>
+    <text class="attr" x="12" y="64"><tspan x="12" dy="0">id</tspan><tspan x="12" dy="18">imię</tspan><tspan x="12" dy="18">nazwisko</tspan><tspan x="12" dy="18">email</tspan><tspan x="12" dy="18">klubLubMiasto</tspan><tspan x="12" dy="18">federacja</tspan><tspan x="12" dy="18">numerLicencji</tspan><tspan x="12" dy="18">rankingKlasyczny</tspan><tspan x="12" dy="18">rankingRapid</tspan><tspan x="12" dy="18">rankingBlitz</tspan><tspan x="12" dy="18">kategoriaSzachowa</tspan><tspan x="12" dy="18">telefon</tspan><tspan x="12" dy="18">rokUrodzenia</tspan></text>
+  </g>
+
+  <g id="Uzytkownik" transform="translate(445,65)">
+    <rect class="box" width="215" height="180"/>
+    <rect class="header" width="215" height="38"/>
+    <text class="title" x="107.5" y="25" text-anchor="middle">Użytkownik</text>
+    <text class="attr" x="12" y="62"><tspan x="12" dy="0">id</tspan><tspan x="12" dy="18">email</tspan><tspan x="12" dy="18">hasło</tspan><tspan x="12" dy="18">nazwa</tspan><tspan x="12" dy="18">rola</tspan><tspan x="12" dy="18">dataUtworzenia</tspan></text>
+  </g>
+
+  <g id="Rola" transform="translate(835,25)">
+    <rect class="box" width="220" height="135"/>
+    <text class="stereo" x="110" y="24" text-anchor="middle">&lt;&lt;enumeration&gt;&gt;</text>
+    <text class="enumTitle" x="110" y="45" text-anchor="middle">RolaUżytkownika</text>
+    <line class="line" x1="10" y1="56" x2="210" y2="56"/>
+    <text class="attr" x="12" y="82"><tspan x="12" dy="0">ADMIN</tspan><tspan x="12" dy="18">SĘDZIA</tspan><tspan x="12" dy="18">GRACZ</tspan></text>
+  </g>
+
+  <g id="Turniej" transform="translate(790,285)">
+    <rect class="box" width="250" height="390"/>
+    <rect class="header" width="250" height="38"/>
+    <text class="title" x="125" y="25" text-anchor="middle">TurniejSzachowy</text>
+    <text class="attr" x="12" y="62"><tspan x="12" dy="0">id</tspan><tspan x="12" dy="18">nazwa</tspan><tspan x="12" dy="18">opis</tspan><tspan x="12" dy="18">miejsce</tspan><tspan x="12" dy="18">miasto</tspan><tspan x="12" dy="18">dataRozpoczęcia</tspan><tspan x="12" dy="18">dataZakończenia</tspan><tspan x="12" dy="18">terminZapisów</tspan><tspan x="12" dy="18">organizator</tspan><tspan x="12" dy="18">emailKontaktowy</tspan><tspan x="12" dy="18">telefonKontaktowy</tspan><tspan x="12" dy="18">typTurnieju</tspan><tspan x="12" dy="18">tempoGry</tspan><tspan x="12" dy="18">liczbaRund</tspan><tspan x="12" dy="18">limitGraczy</tspan><tspan x="12" dy="18">wpisowe</tspan><tspan x="12" dy="18">status</tspan><tspan x="12" dy="18">zapisyOtwarte</tspan></text>
+  </g>
+
+  <g id="Runda" transform="translate(1280,175)">
+    <rect class="box" width="205" height="150"/>
+    <rect class="header" width="205" height="38"/>
+    <text class="title" x="102.5" y="25" text-anchor="middle">Runda</text>
+    <text class="attr" x="12" y="62"><tspan x="12" dy="0">id</tspan><tspan x="12" dy="18">numerRundy</tspan><tspan x="12" dy="18">status</tspan><tspan x="12" dy="18">dataUtworzenia</tspan></text>
+  </g>
+
+  <g id="StatusRundy" transform="translate(1595,170)">
+    <rect class="box" width="185" height="150"/>
+    <text class="stereo" x="92.5" y="24" text-anchor="middle">&lt;&lt;enumeration&gt;&gt;</text>
+    <text class="enumTitle" x="92.5" y="45" text-anchor="middle">StatusRundy</text>
+    <line class="line" x1="10" y1="56" x2="175" y2="56"/>
+    <text class="attr" x="12" y="82"><tspan x="12" dy="0">NIE_ROZPOCZĘTA</tspan><tspan x="12" dy="18">PAROWANIA_OPUBLIKOWANE</tspan><tspan x="12" dy="18">W_TRAKCIE</tspan><tspan x="12" dy="18">ZAKOŃCZONA</tspan></text>
+  </g>
+
+  <g id="Zgloszenie" transform="translate(430,445)">
+    <rect class="box" width="255" height="330"/>
+    <rect class="header" width="255" height="38"/>
+    <text class="title" x="127.5" y="25" text-anchor="middle">ZgłoszenieDoTurnieju</text>
+    <text class="attr" x="12" y="62"><tspan x="12" dy="0">id</tspan><tspan x="12" dy="18">imię</tspan><tspan x="12" dy="18">nazwisko</tspan><tspan x="12" dy="18">email</tspan><tspan x="12" dy="18">klubLubMiasto</tspan><tspan x="12" dy="18">federacja</tspan><tspan x="12" dy="18">numerLicencji</tspan><tspan x="12" dy="18">ranking</tspan><tspan x="12" dy="18">kategoriaSzachowa</tspan><tspan x="12" dy="18">telefon</tspan><tspan x="12" dy="18">rokUrodzenia</tspan><tspan x="12" dy="18">uwagi</tspan><tspan x="12" dy="18">status</tspan><tspan x="12" dy="18">dataZgłoszenia</tspan></text>
+  </g>
+
+  <g id="Tabela" transform="translate(25,645)">
+    <rect class="box" width="220" height="295"/>
+    <rect class="header" width="220" height="38"/>
+    <text class="title" x="110" y="25" text-anchor="middle">TabelaWyników</text>
+    <text class="attr" x="12" y="62"><tspan x="12" dy="0">id</tspan><tspan x="12" dy="18">punkty</tspan><tspan x="12" dy="18">miejsce</tspan><tspan x="12" dy="18">zawodnik</tspan><tspan x="12" dy="18">klub/miasto</tspan><tspan x="12" dy="18">rok urodzenia</tspan><tspan x="12" dy="18">ranking</tspan><tspan x="12" dy="18">kategoria</tspan><tspan x="12" dy="18">punkty</tspan><tspan x="12" dy="18">buchholz</tspan><tspan x="12" dy="18">medianBuchholz</tspan><tspan x="12" dy="18">sonnebornBerger</tspan><tspan x="12" dy="18">progres</tspan></text>
+  </g>
+
+  <g id="StatusZgloszenia" transform="translate(450,845)">
+    <rect class="box" width="200" height="115"/>
+    <text class="stereo" x="100" y="24" text-anchor="middle">&lt;&lt;enumeration&gt;&gt;</text>
+    <text class="enumTitle" x="100" y="45" text-anchor="middle">StatusZgłoszenia</text>
+    <line class="line" x1="10" y1="56" x2="190" y2="56"/>
+    <text class="attr" x="12" y="82"><tspan x="12" dy="0">ZGŁOSZONE</tspan><tspan x="12" dy="18">ANULOWANE</tspan></text>
+  </g>
+
+  <g id="StatusTurnieju" transform="translate(815,800)">
+    <rect class="box" width="220" height="155"/>
+    <text class="stereo" x="110" y="24" text-anchor="middle">&lt;&lt;enumeration&gt;&gt;</text>
+    <text class="enumTitle" x="110" y="45" text-anchor="middle">StatusTurnieju</text>
+    <line class="line" x1="10" y1="56" x2="210" y2="56"/>
+    <text class="attr" x="12" y="82"><tspan x="12" dy="0">OPUBLIKOWANY</tspan><tspan x="12" dy="18">ZAPISY_ZAMKNIĘTE</tspan><tspan x="12" dy="18">W_TRAKCIE</tspan><tspan x="12" dy="18">ZAKOŃCZONY</tspan><tspan x="12" dy="18">ANULOWANY</tspan></text>
+  </g>
+
+  <g id="Partia" transform="translate(1270,635)">
+    <rect class="box" width="205" height="125"/>
+    <rect class="header" width="205" height="38"/>
+    <text class="title" x="102.5" y="25" text-anchor="middle">Partia</text>
+    <text class="attr" x="12" y="62"><tspan x="12" dy="0">id</tspan><tspan x="12" dy="18">numerSzachownicy</tspan><tspan x="12" dy="18">wynik</tspan></text>
+  </g>
+
+  <g id="WynikPartii" transform="translate(1590,610)">
+    <rect class="box" width="200" height="235"/>
+    <text class="stereo" x="100" y="24" text-anchor="middle">&lt;&lt;enumeration&gt;&gt;</text>
+    <text class="enumTitle" x="100" y="45" text-anchor="middle">WynikPartii</text>
+    <line class="line" x1="10" y1="56" x2="190" y2="56"/>
+    <text class="attr" x="12" y="82"><tspan x="12" dy="0">NIEROZEGRANA</tspan><tspan x="12" dy="18">WYGRANA_BIAŁYCH</tspan><tspan x="12" dy="18">WYGRANA_CZARNYCH</tspan><tspan x="12" dy="18">REMIS</tspan><tspan x="12" dy="18">WALKOWER_BIAŁYCH</tspan><tspan x="12" dy="18">WALKOWER_CZARNYCH</tspan><tspan x="12" dy="18">OBUSTRONNY_WALKOWER</tspan><tspan x="12" dy="18">PAUZA</tspan></text>
+  </g>
+
+  <!-- Associations -->
+  <path class="line" d="M255 155 L445 155"/>
+  <text class="mult" x="275" y="145">1</text><text class="label" x="325" y="143">posiada</text><text class="mult" x="405" y="145">0..1</text>
+
+  <path class="line" d="M660 160 L790 285"/>
+  <text class="mult" x="675" y="170">1</text><text class="label" x="705" y="225">tworzy</text><text class="mult" x="772" y="272">0..*</text>
+
+  <path class="line" d="M552 245 L552 445"/>
+  <text class="mult" x="565" y="270">0..*</text><text class="label" x="565" y="350">składa</text><text class="mult" x="565" y="430">0..1</text>
+
+  <path class="line" d="M685 525 L790 525"/>
+  <text class="mult" x="695" y="515">0..*</text><text class="label" x="715" y="505">posiada</text><text class="mult" x="770" y="515">1</text>
+
+  <!-- Turniej - TabelaWynikow routed clearly -->
+  <path class="line" d="M790 620 L710 620 L710 1000 L135 1000 L135 940"/>
+  <text class="mult" x="770" y="610">1</text><text class="label" x="620" y="640">posiada</text><text class="mult" x="150" y="965">0..*</text>
+
+  <path class="line" d="M245 710 C300 710 295 665 350 665 L430 665"/>
+  <text class="mult" x="265" y="700">1</text><text class="label" x="310" y="650">ma wynik</text><text class="mult" x="392" y="655">0..1</text>
+
+  <path class="line" d="M1040 345 L1280 250"/>
+  <text class="mult" x="1050" y="335">1</text><text class="label" x="1120" y="275">składa się z</text><text class="mult" x="1250" y="238">0..*</text>
+
+  <path class="line" d="M1040 505 L1270 635"/>
+  <text class="mult" x="1052" y="500">1</text><text class="label" x="1145" y="560">posiada</text><text class="mult" x="1230" y="620">0..*</text>
+
+  <path class="line" d="M1382 325 L1382 635"/>
+  <text class="mult" x="1395" y="350">1</text><text class="label" x="1400" y="475">zawiera</text><text class="mult" x="1395" y="620">1..*</text>
+
+  <path class="line" d="M685 715 L1270 715"/>
+  <text class="mult" x="700" y="705">0..1</text><text class="label" x="920" y="748">gra jako zawodnik</text><text class="mult" x="1240" y="705">0..*</text>
+
+  <!-- Dependencies to enums -->
+  <path class="dash" d="M660 86 L835 86"/>
+  <text class="label" x="720" y="72">rola</text>
+
+  <path class="dash" d="M1040 665 L925 800"/>
+  <text class="label" x="965" y="760">status</text>
+
+  <path class="dash" d="M1485 240 L1595 240"/>
+  <text class="label" x="1515" y="225">status</text>
+
+  <path class="dash" d="M558 775 L558 845"/>
+  <text class="label" x="575" y="820">ma status</text>
+
+  <path class="dash" d="M1475 700 L1590 700"/>
+  <text class="label" x="1515" y="685">wynik</text>
+</svg>
